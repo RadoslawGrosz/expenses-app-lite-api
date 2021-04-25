@@ -29,12 +29,12 @@ public class ExpenseController {
         return expenseService.getExpenses();
     }
 
-    @DeleteMapping(value = "/{id}")
-    public void delExpense(@PathVariable String id) {
+    @DeleteMapping()
+    public void delExpense(@RequestBody String id) {
         expenseService.delExpense(id);
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping()
     public void putExpense(@RequestBody Expense expense) {
         expenseService.editExpense(expense);
     }
